@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A0FE89D1FBC0D6900FCEBE3 /* MSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FE89C1FBC0D6900FCEBE3 /* MSCardView.m */; };
+		6A0FE8A01FBC33F700FCEBE3 /* MSCardView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FE89F1FBC33F700FCEBE3 /* MSCardView1.m */; };
 		6A72B9101F42CA64004C5B39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72B90F1F42CA64004C5B39 /* main.m */; };
 		6A72B9131F42CA64004C5B39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72B9121F42CA64004C5B39 /* AppDelegate.m */; };
 		6A72B9161F42CA64004C5B39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72B9151F42CA64004C5B39 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		6A0FE89B1FBC0D6900FCEBE3 /* MSCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCardView.h; sourceTree = "<group>"; };
 		6A0FE89C1FBC0D6900FCEBE3 /* MSCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCardView.m; sourceTree = "<group>"; };
+		6A0FE89E1FBC33F700FCEBE3 /* MSCardView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCardView1.h; sourceTree = "<group>"; };
+		6A0FE89F1FBC33F700FCEBE3 /* MSCardView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCardView1.m; sourceTree = "<group>"; };
 		6A72B90B1F42CA64004C5B39 /* navi_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navi_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A72B90F1F42CA64004C5B39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A72B9111F42CA64004C5B39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				6A72B90E1F42CA64004C5B39 /* Supporting Files */,
 				6A0FE89B1FBC0D6900FCEBE3 /* MSCardView.h */,
 				6A0FE89C1FBC0D6900FCEBE3 /* MSCardView.m */,
+				6A0FE89E1FBC33F700FCEBE3 /* MSCardView1.h */,
+				6A0FE89F1FBC33F700FCEBE3 /* MSCardView1.m */,
 			);
 			path = navi_test;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			files = (
 				6A0FE89D1FBC0D6900FCEBE3 /* MSCardView.m in Sources */,
 				6A72B9161F42CA64004C5B39 /* ViewController.m in Sources */,
+				6A0FE8A01FBC33F700FCEBE3 /* MSCardView1.m in Sources */,
 				6A72B9131F42CA64004C5B39 /* AppDelegate.m in Sources */,
 				6A72B9101F42CA64004C5B39 /* main.m in Sources */,
 			);

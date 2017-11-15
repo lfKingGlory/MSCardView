@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "MSCardView.h"
+#import "MSCardView1.h"
 
 #define MJCREDIT_DOWNLOAD_URL @"http://10.0.116.101:8020/msfcredit/index.html"
 
@@ -19,7 +20,7 @@
 @interface ViewController ()<UIWebViewDelegate, MSWebViewJSExport>
 @property (strong, nonatomic) JSContext *context;
 @property (strong, nonatomic) UIWebView *webView;
-@property (strong, nonatomic) MSCardView *cardView;
+@property (strong, nonatomic) MSCardView1 *cardView;
 @end
 
 @implementation ViewController
@@ -49,10 +50,13 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.cardView = [[MSCardView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 180)];
-    self.cardView.backgroundColor = [UIColor yellowColor];
-    self.cardView.count = 5;
+    self.cardView = [[MSCardView1 alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 180)];
+    self.cardView.datas = @[@1, @2, @3, @4, @5, @6, @7, @8, @9];
     [self.view addSubview:self.cardView];
+    
+    MSCardView *c = [[MSCardView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 180)];
+    c.count = 8;
+    [self.view addSubview:c];
 }
 
 #pragma mark - UIWebViewDelegate
