@@ -126,7 +126,6 @@
         self.indexCurrent = (self.indexCurrent + self.datas.count - (2 - page)) % self.datas.count;
     }
     [self reset];
-    self.scrollView.contentOffset = CGPointMake(self.scrollView.bounds.size.width * 2, 0);
 }
 
 - (void)reset {
@@ -139,6 +138,7 @@
     [self.arrM[0] setCount:[self.datas[indexLeft2] integerValue]];
     [self.arrM[3] setCount:[self.datas[indexRight1] integerValue]];
     [self.arrM[4] setCount:[self.datas[indexRight2] integerValue]];
+    self.scrollView.contentOffset = CGPointMake(self.scrollView.bounds.size.width * 2, 0);
 }
 
 // 始终计算 每个subView 距离 scrollView 的中心距离（动态）,滚动不会改变subView 的 frame
