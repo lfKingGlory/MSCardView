@@ -128,6 +128,7 @@
     [self reset];
 }
 
+// indexLeft2  indexLeft1  indexCurrent  indexRight1  indexRight2
 - (void)reset {
     NSInteger indexLeft1 = (self.indexCurrent + self.datas.count - 1) % self.datas.count;
     NSInteger indexLeft2 = (self.indexCurrent + self.datas.count - 2) % self.datas.count;
