@@ -33,6 +33,7 @@
 }
 
 - (void)setCount:(NSInteger)count {
+    _count = count;
     self.lbTips.text = [NSString stringWithFormat:@"%ld",count];
 }
 @end
@@ -109,8 +110,14 @@
         v.backgroundColor = [UIColor purpleColor];
         [_scrollView addSubview:v];
         [self.arrM addObject:v];
+        [v addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]];
     }
     self.scrollView.contentOffset = CGPointMake(self.scrollView.bounds.size.width * 2, 0);
+}
+
+- (void)tap:(UITapGestureRecognizer *)g {
+    MSCardItem *v = (MSCardItem *)g.view;
+    NSLog(@"%ld",v.count);
 }
 
 - (void)reload {

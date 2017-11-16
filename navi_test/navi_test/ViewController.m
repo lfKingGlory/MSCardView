@@ -46,7 +46,10 @@
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
 //    [self.webView loadRequest:request];
     
-    
+//    UICollectionView;
+//    UICollectionViewFlowLayout;
+//    UICollectionViewLayout;
+//    UICollectionViewTransitionLayout;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
