@@ -105,9 +105,6 @@
                 return view;
             }
         }
-        if (self.scrollView.isDecelerating) {
-            return view;
-        }
         return self.scrollView;
     }
     return view;

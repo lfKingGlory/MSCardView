@@ -57,18 +57,9 @@
     if (!datas || datas.count == 0) {
         return;
     }
-    _datas = datas;    
-    
+    _datas = datas;
     self.indexCurrent = 0;
-    NSInteger indexLeft1 = (self.indexCurrent + datas.count - 1) % datas.count;
-    NSInteger indexLeft2 = (indexLeft1 - 1 < 0) ? datas.count - 1 : indexLeft1 - 1;
-    NSInteger indexRight1 = (self.indexCurrent + 1) % datas.count;
-    NSInteger indexRight2 = (indexRight1 + 1 > datas.count - 1) ? 0 : indexRight1 + 1;
-    [self.arrM[2] setCount:[datas[self.indexCurrent] integerValue]];
-    [self.arrM[1] setCount:[datas[indexLeft1] integerValue]];
-    [self.arrM[0] setCount:[datas[indexLeft2] integerValue]];
-    [self.arrM[3] setCount:[datas[indexRight1] integerValue]];
-    [self.arrM[4] setCount:[datas[indexRight2] integerValue]];
+    [self reset];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -128,25 +119,29 @@
     }
     
     CGFloat contentOffsetX = self.scrollView.contentOffset.x;
-    if (contentOffsetX > self.scrollView.bounds.size.width * 2) {
-        self.indexCurrent = (self.indexCurrent + 1) % self.datas.count;
-    }else if(contentOffsetX < self.scrollView.bounds.size.width * 2){
-        self.indexCurrent = (self.indexCurrent + self.datas.count - 1) % self.datas.count;
+    NSInteger page = contentOffsetX / self.scrollView.bounds.size.width;
+    if (page > 2) {
+        self.indexCurrent = (self.indexCurrent + (page - 2)) % self.datas.count;
+    }else if(page < 2){
+        self.indexCurrent = (self.indexCurrent + self.datas.count - (2 - page)) % self.datas.count;
     }
-    
+    [self reset];
+    self.scrollView.contentOffset = CGPointMake(self.scrollView.bounds.size.width * 2, 0);
+}
+
+- (void)reset {
     NSInteger indexLeft1 = (self.indexCurrent + self.datas.count - 1) % self.datas.count;
-    NSInteger indexLeft2 = (indexLeft1 - 1 < 0) ? self.datas.count - 1 : indexLeft1 - 1;
+    NSInteger indexLeft2 = (self.indexCurrent + self.datas.count - 2) % self.datas.count;
     NSInteger indexRight1 = (self.indexCurrent + 1) % self.datas.count;
-    NSInteger indexRight2 = (indexRight1 + 1 > self.datas.count - 1) ? 0 : indexRight1 + 1;
+    NSInteger indexRight2 = (self.indexCurrent + 2) % self.datas.count;
     [self.arrM[2] setCount:[self.datas[self.indexCurrent] integerValue]];
     [self.arrM[1] setCount:[self.datas[indexLeft1] integerValue]];
     [self.arrM[0] setCount:[self.datas[indexLeft2] integerValue]];
     [self.arrM[3] setCount:[self.datas[indexRight1] integerValue]];
     [self.arrM[4] setCount:[self.datas[indexRight2] integerValue]];
-    
-    self.scrollView.contentOffset = CGPointMake(self.scrollView.bounds.size.width * 2, 0);
 }
 
+// 始终计算 每个subView 距离 scrollView 的中心距离（动态）,滚动不会改变subView 的 frame
 - (CGFloat)getScaleFactorWithCenterPadding:(CGFloat)centerPadding contentOffsetX:(CGFloat)contentOffsetX {
     CGFloat distanceFromCenterX = centerPadding - contentOffsetX;
     CGFloat offsetRatio = fabs(distanceFromCenterX) / self.scrollView.bounds.size.width;
@@ -162,9 +157,6 @@
             if ((view = [subview hitTest:offset withEvent:event])) {
                 return view;
             }
-        }
-        if (self.scrollView.isDecelerating) {
-            return view;
         }
         return self.scrollView;
     }
