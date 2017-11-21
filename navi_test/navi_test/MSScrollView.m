@@ -80,7 +80,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
         CGFloat offsetRatio = distanceFromCenterX / CGRectGetWidth(self.frame);
         CGFloat angle = offsetRatio * 30;
         if (offsetRatio > 0){
-            //给个起始位置 在正常位置以下以左的某段距离
+            //给个起始位置 
             t1 = CATransform3DMakeRotation(DEGREES_TO_RADIANS(1.5*angle), 0, 0, 1);
             //绕Z轴旋转
             CATransform3D t2 = CATransform3DRotate(t1,DEGREES_TO_RADIANS(-angle), 0, 0, 1);
