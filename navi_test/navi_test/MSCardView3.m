@@ -82,6 +82,8 @@ typedef NS_ENUM(NSInteger, MSCardItem3Position) {
 @property (strong, nonatomic) MSCardItem3 *itemLeft;
 @property (strong, nonatomic) MSCardItem3 *itemMiddle;
 @property (strong, nonatomic) MSCardItem3 *itemRight;
+
+@property (assign, nonatomic) CGFloat progress;
 @end
 
 @implementation MSCardView3
@@ -94,12 +96,15 @@ typedef NS_ENUM(NSInteger, MSCardItem3Position) {
 }
 
 - (void)addSubviews {
+    
+    _progress = 0;
+    
     _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     _scrollView.delegate = self;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.pagingEnabled = YES;
-    _scrollView.bounces = NO;
+//    _scrollView.bounces = NO;
     _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(_scrollView.bounds.size.width * 3, 0);
     [self addSubview:_scrollView];
@@ -122,6 +127,17 @@ typedef NS_ENUM(NSInteger, MSCardItem3Position) {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat progress = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    
+    {  //  非常灵敏的判断  UIScrollView  的滑动方向
+        CGFloat direction = progress - _progress;
+        if (direction > 0) {
+            NSLog(@"在向左滑");
+        } else {
+            NSLog(@"在向右滑");
+        }
+        _progress = progress;
+    }
+    
     self.itemLeft.progress = progress;
     self.itemMiddle.progress = progress;
     self.itemRight.progress = progress;
