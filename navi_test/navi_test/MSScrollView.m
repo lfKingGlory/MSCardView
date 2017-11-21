@@ -72,21 +72,41 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
 }
 
 - (void)transform2 {
+
+//==================CATransform3D=========================
     CGFloat contentOffsetX = self.contentOffset.x;
     for(UIView *view in self.subviews){
-        
+
         CATransform3D t1 = CATransform3DIdentity;
         CGFloat distanceFromCenterX = view.frame.origin.x - contentOffsetX;
         CGFloat offsetRatio = distanceFromCenterX / CGRectGetWidth(self.frame);
         CGFloat angle = offsetRatio * 30;
         if (offsetRatio > 0){
-            //给个起始位置 
+            //给个起始位置
             t1 = CATransform3DMakeRotation(DEGREES_TO_RADIANS(1.5*angle), 0, 0, 1);
             //绕Z轴旋转
             CATransform3D t2 = CATransform3DRotate(t1,DEGREES_TO_RADIANS(-angle), 0, 0, 1);
             view.layer.transform = t2;
         }
-        
+
     }
+    
+//==================CGAffineTransform=========================
+//    CGFloat contentOffsetX = self.contentOffset.x;
+//    for(UIView *view in self.subviews){
+//
+//        CGAffineTransform t1 = CGAffineTransformIdentity;
+//        CGFloat distanceFromCenterX = view.frame.origin.x - contentOffsetX;
+//        CGFloat offsetRatio = distanceFromCenterX / CGRectGetWidth(self.frame);
+//        CGFloat angle = offsetRatio * 30;
+//        if (offsetRatio > 0){
+//            //给个起始位置
+//            t1 = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(1.5*angle));
+//            CGAffineTransform t2 = CGAffineTransformRotate(t1, DEGREES_TO_RADIANS(-angle));
+//            view.transform = t2;
+//
+//        }
+//
+//    }
 }
 @end
