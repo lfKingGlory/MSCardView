@@ -10,8 +10,11 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "MSCardView.h"
 #import "MSCardView1.h"
+#import "MSCardView2.h"
 
 #define MJCREDIT_DOWNLOAD_URL @"http://10.0.116.101:8020/msfcredit/index.html"
+
+__weak NSString *string_weak = nil;
 
 @protocol MSWebViewJSExport <JSExport>
 - (void)onDownload:(NSString *)downloadUrl;
@@ -32,7 +35,6 @@
 
 - (void)addSubveiws {
     
-    
 //    self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationItem.title = @"MSWebViewJSExport";
 //
@@ -50,16 +52,38 @@
 //    UICollectionViewFlowLayout;
 //    UICollectionViewLayout;
 //    UICollectionViewTransitionLayout;
+//
+//    UITableView;
+//
+//    CATransaction;
+    
+    NSString *str = [NSString stringWithFormat:@"liufei"];
+    string_weak = str;
+    NSLog(@"%@",string_weak);
+    
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.cardView = [[MSCardView1 alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 180)];
-    self.cardView.datas = @[@1, @2, @3, @4, @5, @6, @7, @8, @9];
-    [self.view addSubview:self.cardView];
+//    self.cardView = [[MSCardView1 alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 180)];
+//    self.cardView.datas = @[@1, @2, @3, @4, @5, @6, @7, @8, @9];
+//    [self.view addSubview:self.cardView];
+//
+//    MSCardView *c = [[MSCardView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 180)];
+//    c.count = 8;
+//    [self.view addSubview:c];
     
-    MSCardView *c = [[MSCardView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 180)];
-    c.count = 8;
+    MSCardView2 *c = [[MSCardView2 alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
     [self.view addSubview:c];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@",string_weak);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    NSLog(@"%@",string_weak);
 }
 
 #pragma mark - UIWebViewDelegate
