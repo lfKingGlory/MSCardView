@@ -10,6 +10,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "ViewController1.h"
 #import "ViewController2.h"
+#import "ViewController3.h"
 
 #define MJCREDIT_DOWNLOAD_URL @"http://10.0.116.101:8020/msfcredit/index.html"
 
@@ -68,6 +69,13 @@
     btn2.tag = 1001;
     [self.view addSubview:btn2];
     [btn2 addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn3 = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btn2.frame)+30, self.view.bounds.size.width, 60)];
+    btn3.backgroundColor = [UIColor redColor];
+    [btn3 setTitle:@"MSCardView3" forState:UIControlStateNormal];
+    btn3.tag = 1002;
+    [self.view addSubview:btn3];
+    [btn3 addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)tap:(UIButton *)btn {
@@ -77,6 +85,9 @@
     } else if (btn.tag == 1001) {
         ViewController2 *v2 = [ViewController2 new];
         [self.navigationController pushViewController:v2 animated:YES];
+    } else if (btn.tag == 1002) {
+        ViewController3 *v3 = [ViewController3 new];
+        [self.navigationController pushViewController:v3 animated:YES];
     } else {
         
     }

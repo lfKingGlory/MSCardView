@@ -21,6 +21,8 @@
 		6A93E7131FC280A3009697A3 /* MSCardView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A93E7121FC280A3009697A3 /* MSCardView2.m */; };
 		6A93E7161FC3CB6E009697A3 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A93E7151FC3CB6E009697A3 /* ViewController1.m */; };
 		6A93E7191FC3CB7D009697A3 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A93E7181FC3CB7D009697A3 /* ViewController2.m */; };
+		6A93E71C1FC40604009697A3 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A93E71B1FC40604009697A3 /* ViewController3.m */; };
+		6A93E71F1FC40686009697A3 /* MSCardView3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A93E71E1FC40686009697A3 /* MSCardView3.m */; };
 		6AC199EC1FB290E200B1B85C /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC199EB1FB290E200B1B85C /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		6A93E7151FC3CB6E009697A3 /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
 		6A93E7171FC3CB7D009697A3 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		6A93E7181FC3CB7D009697A3 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		6A93E71A1FC40604009697A3 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		6A93E71B1FC40604009697A3 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		6A93E71D1FC40686009697A3 /* MSCardView3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCardView3.h; sourceTree = "<group>"; };
+		6A93E71E1FC40686009697A3 /* MSCardView3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCardView3.m; sourceTree = "<group>"; };
 		6AC199EB1FB290E200B1B85C /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -132,6 +138,8 @@
 				6A93E7151FC3CB6E009697A3 /* ViewController1.m */,
 				6A93E7171FC3CB7D009697A3 /* ViewController2.h */,
 				6A93E7181FC3CB7D009697A3 /* ViewController2.m */,
+				6A93E71A1FC40604009697A3 /* ViewController3.h */,
+				6A93E71B1FC40604009697A3 /* ViewController3.m */,
 				6A72B9171F42CA64004C5B39 /* Main.storyboard */,
 				6A72B91A1F42CA64004C5B39 /* Assets.xcassets */,
 				6A72B91C1F42CA64004C5B39 /* LaunchScreen.storyboard */,
@@ -143,6 +151,8 @@
 				6A0FE89F1FBC33F700FCEBE3 /* MSCardView1.m */,
 				6A93E7111FC280A3009697A3 /* MSCardView2.h */,
 				6A93E7121FC280A3009697A3 /* MSCardView2.m */,
+				6A93E71D1FC40686009697A3 /* MSCardView3.h */,
+				6A93E71E1FC40686009697A3 /* MSCardView3.m */,
 				6A0FE8A11FBD24FB00FCEBE3 /* MSScrollView.h */,
 				6A0FE8A21FBD24FB00FCEBE3 /* MSScrollView.m */,
 			);
@@ -324,9 +334,11 @@
 				6A0FE89D1FBC0D6900FCEBE3 /* MSCardView.m in Sources */,
 				6A72B9161F42CA64004C5B39 /* ViewController.m in Sources */,
 				6A0FE8A01FBC33F700FCEBE3 /* MSCardView1.m in Sources */,
+				6A93E71C1FC40604009697A3 /* ViewController3.m in Sources */,
 				6A93E7161FC3CB6E009697A3 /* ViewController1.m in Sources */,
 				6A93E7191FC3CB7D009697A3 /* ViewController2.m in Sources */,
 				6A72B9131F42CA64004C5B39 /* AppDelegate.m in Sources */,
+				6A93E71F1FC40686009697A3 /* MSCardView3.m in Sources */,
 				6A72B9101F42CA64004C5B39 /* main.m in Sources */,
 				6A0FE8A31FBD24FB00FCEBE3 /* MSScrollView.m in Sources */,
 			);
