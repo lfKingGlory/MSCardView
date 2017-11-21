@@ -84,6 +84,7 @@
 
 #pragma mark - Private
 - (void)addSubviews {
+    self.clipsToBounds = YES;
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(30, 15, self.bounds.size.width - 60, self.bounds.size.height - 30)];
     _scrollView.delegate = self;
     _scrollView.showsVerticalScrollIndicator = NO;

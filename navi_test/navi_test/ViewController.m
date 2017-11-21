@@ -8,13 +8,10 @@
 
 #import "ViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
-#import "MSCardView.h"
-#import "MSCardView1.h"
-#import "MSCardView2.h"
+#import "ViewController1.h"
+#import "ViewController2.h"
 
 #define MJCREDIT_DOWNLOAD_URL @"http://10.0.116.101:8020/msfcredit/index.html"
-
-__weak NSString *string_weak = nil;
 
 @protocol MSWebViewJSExport <JSExport>
 - (void)onDownload:(NSString *)downloadUrl;
@@ -23,7 +20,6 @@ __weak NSString *string_weak = nil;
 @interface ViewController ()<UIWebViewDelegate, MSWebViewJSExport>
 @property (strong, nonatomic) JSContext *context;
 @property (strong, nonatomic) UIWebView *webView;
-@property (strong, nonatomic) MSCardView1 *cardView;
 @end
 
 @implementation ViewController
@@ -57,34 +53,35 @@ __weak NSString *string_weak = nil;
 //
 //    CATransaction;
     
-    NSString *str = [NSString stringWithFormat:@"liufei"];
-    string_weak = str;
-    NSLog(@"%@",string_weak);
-    
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-//    self.cardView = [[MSCardView1 alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 180)];
-//    self.cardView.datas = @[@1, @2, @3, @4, @5, @6, @7, @8, @9];
-//    [self.view addSubview:self.cardView];
-//
-//    MSCardView *c = [[MSCardView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 180)];
-//    c.count = 8;
-//    [self.view addSubview:c];
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 60)];
+    btn1.backgroundColor = [UIColor redColor];
+    [btn1 setTitle:@"MSCardView1" forState:UIControlStateNormal];
+    btn1.tag = 1000;
+    [self.view addSubview:btn1];
+    [btn1 addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
     
-    MSCardView2 *c = [[MSCardView2 alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
-    [self.view addSubview:c];
+    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(btn1.frame)+30, self.view.bounds.size.width, 60)];
+    btn2.backgroundColor = [UIColor redColor];
+    [btn2 setTitle:@"MSCardView2" forState:UIControlStateNormal];
+    btn2.tag = 1001;
+    [self.view addSubview:btn2];
+    [btn2 addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSLog(@"%@",string_weak);
+- (void)tap:(UIButton *)btn {
+    if (btn.tag == 1000) {
+        ViewController1 *v1 = [ViewController1 new];
+        [self.navigationController pushViewController:v1 animated:YES];
+    } else if (btn.tag == 1001) {
+        ViewController2 *v2 = [ViewController2 new];
+        [self.navigationController pushViewController:v2 animated:YES];
+    } else {
+        
+    }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
-    NSLog(@"%@",string_weak);
-}
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
