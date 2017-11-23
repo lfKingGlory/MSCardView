@@ -15,7 +15,15 @@
 #define MJCREDIT_DOWNLOAD_URL @"http://10.0.116.101:8020/msfcredit/index.html"
 
 @protocol MSWebViewJSExport <JSExport>
+// 无参数或者一个参数使用下面的方法
 - (void)onDownload:(NSString *)downloadUrl;
+
+/*
+     多参数使用下面的方法  (参数顺序要对应上)
+     onDownload  为 js 方法名
+     - (void)onDownload:(NSString *)downloadUrl   为  OC 方法
+ */
+//JSExportAs(onDownload, - (void)onDownload:(NSString *)downloadUrl);
 @end
 
 @interface ViewController ()<UIWebViewDelegate, MSWebViewJSExport>
