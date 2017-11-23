@@ -21,6 +21,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     MSCardView2 *c = [[MSCardView2 alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
     [self.view addSubview:c];
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGes:)];
+    [self.view addGestureRecognizer:pan];
+}
+
+- (void)panGes:(UIPanGestureRecognizer *)ges {
+    NSLog(@"%s",__func__);
 }
 
 @end
