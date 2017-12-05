@@ -24,6 +24,9 @@
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGes:)];
     [self.view addGestureRecognizer:pan];
+    
+    UIPanGestureRecognizer *pan1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGes:)];
+    [self.view addGestureRecognizer:pan1];
 }
 
 - (void)panGes:(UIPanGestureRecognizer *)ges {
