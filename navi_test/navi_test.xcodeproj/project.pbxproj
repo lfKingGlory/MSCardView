@@ -10,6 +10,7 @@
 		6A0FE89D1FBC0D6900FCEBE3 /* MSCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FE89C1FBC0D6900FCEBE3 /* MSCardView.m */; };
 		6A0FE8A01FBC33F700FCEBE3 /* MSCardView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FE89F1FBC33F700FCEBE3 /* MSCardView1.m */; };
 		6A0FE8A31FBD24FB00FCEBE3 /* MSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FE8A21FBD24FB00FCEBE3 /* MSScrollView.m */; };
+		6A2705141FDFA79600A93DDE /* AnimationNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2705121FDFA79500A93DDE /* AnimationNumberView.m */; };
 		6A5C6FDE1FC7C125003C9F9E /* UIView+viewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C6FDD1FC7C125003C9F9E /* UIView+viewController.m */; };
 		6A72B9101F42CA64004C5B39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72B90F1F42CA64004C5B39 /* main.m */; };
 		6A72B9131F42CA64004C5B39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72B9121F42CA64004C5B39 /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 		6A0FE8A11FBD24FB00FCEBE3 /* MSScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSScrollView.h; sourceTree = "<group>"; };
 		6A0FE8A21FBD24FB00FCEBE3 /* MSScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSScrollView.m; sourceTree = "<group>"; };
 		6A0FE8AA1FBD7A4000FCEBE3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6A2705121FDFA79500A93DDE /* AnimationNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationNumberView.m; sourceTree = "<group>"; };
+		6A2705131FDFA79500A93DDE /* AnimationNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationNumberView.h; sourceTree = "<group>"; };
 		6A5C6FD61FC5059D003C9F9E /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		6A5C6FDC1FC7C125003C9F9E /* UIView+viewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+viewController.h"; sourceTree = "<group>"; };
 		6A5C6FDD1FC7C125003C9F9E /* UIView+viewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+viewController.m"; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 		6A72B90D1F42CA64004C5B39 /* navi_test */ = {
 			isa = PBXGroup;
 			children = (
+				6A2705131FDFA79500A93DDE /* AnimationNumberView.h */,
+				6A2705121FDFA79500A93DDE /* AnimationNumberView.m */,
 				6A5C6FDC1FC7C125003C9F9E /* UIView+viewController.h */,
 				6A5C6FDD1FC7C125003C9F9E /* UIView+viewController.m */,
 				6A72B9111F42CA64004C5B39 /* AppDelegate.h */,
@@ -337,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2705141FDFA79600A93DDE /* AnimationNumberView.m in Sources */,
 				6A93E7131FC280A3009697A3 /* MSCardView2.m in Sources */,
 				6A0FE89D1FBC0D6900FCEBE3 /* MSCardView.m in Sources */,
 				6A72B9161F42CA64004C5B39 /* ViewController.m in Sources */,
