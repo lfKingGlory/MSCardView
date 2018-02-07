@@ -104,6 +104,7 @@ JSExportAs(onZMCallBack, - (void)onZMCallBack:(NSString *)params sign:(NSString 
     [btn3 addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
 - (void)tap:(UIButton *)btn {
     if (btn.tag == 1000) {
         ViewController1 *v1 = [ViewController1 new];
@@ -118,6 +119,12 @@ JSExportAs(onZMCallBack, - (void)onZMCallBack:(NSString *)params sign:(NSString 
 
     }
 }
+
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear: animated];
+//    NSLog(@"%@",string_weak);
+//}
+
 
 
 #pragma mark - UIWebViewDelegate
