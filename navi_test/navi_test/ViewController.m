@@ -81,10 +81,10 @@ __weak NSString *string_weak = nil;
     NSLog(@"%@",string_weak);
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear: animated];
-    NSLog(@"%@",string_weak);
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear: animated];
+//    NSLog(@"%@",string_weak);
+//}
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
